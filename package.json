@@ -31,5 +31,8 @@
   "dependencies": {
     "request": "^2.88.2",
     "request-promise-native": "^1.0.8"
-  }
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
