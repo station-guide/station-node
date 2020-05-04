@@ -1,17 +1,18 @@
 {
   "name": "station-node",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:station-guide/station-node.git",
   "author": "Alexander Pankiv <alexanderpankiv@gmail.com>",
-  "license": "BSD 3-Clause License",
+  "license": "MIT",
   "private": false,
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "test": "jest --config jestconfig.json",
+    "cover": "jest --config jestconfig.json --coverage",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -19,12 +20,12 @@
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
-    "@types/jest": "^25.1.4",
+    "@types/jest": "^25.2.1",
     "@types/request-promise-native": "^1.0.17",
-    "jest": "^25.2.4",
-    "prettier": "^2.0.2",
-    "ts-jest": "^25.3.0",
-    "tslint": "^6.1.0",
+    "jest": "^26.0.0",
+    "prettier": "^2.0.5",
+    "ts-jest": "^25.4.0",
+    "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
   },

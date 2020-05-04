@@ -13,7 +13,7 @@ class Client {
         },
         method: 'POST',
         simple: false,
-        uri: this.apiUri,
+        uri: `${this.apiUri}/v1/events/count`,
       });
     } catch (_) {
       // Do nothing really

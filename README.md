@@ -7,5 +7,5 @@ This a module to make interacting with the
 
 ```
 npm install station-node
+yarn add station-node
 ```
-
