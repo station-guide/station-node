@@ -1,10 +1,10 @@
-import request from 'request-promise-native';
+import axios from 'axios';
 
-jest.mock('request-promise-native');
+jest.mock('axios');
 
 import Client from '../index';
 
-const mockedRequest = request as jest.Mock<typeof request>;
+const mockedRequest = axios.get as jest.Mock<any>;
 
 describe('Client basic tests', () => {
   it('should just work', async () => {
