@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "declaration": true,
+    "target": "ES2022",
+    "lib": ["ES2022"],
+
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    "rootDir": "./src",
     "outDir": "./lib",
+
+    "declaration": true,
+    "sourceMap": true,
+
     "strict": true,
-    "esModuleInterop": true
+    "types": ["node"],
+    "isolatedModules": true,
+    "skipLibCheck": true,
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/__tests__/*"],
 }
