@@ -1,11 +1,17 @@
 {
   "name": "station-node",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "packageManager": "pnpm@11.1.2",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "require": "./lib/index.js"
+    }
+  },
+  "packageManager": "pnpm@11.5.0",
   "repository": "git@github.com:station-guide/station-node.git",
-  "author": "Alexander Pankiv <alexanderpankiv@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -21,22 +27,18 @@
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
-    "@types/node": "^25.8.0",
+    "@types/node": "^25.9.1",
     "jest": "^30.4.2",
-    "oxfmt": "^0.50.0",
-    "ts-jest": "^29.4.9",
+    "oxfmt": "^0.53.0",
+    "ts-jest": "^29.4.11",
     "typescript": "^6.0.3"
   },
   "dependencies": {
     "axios": "^1.16.1"
   },
-  "pnpm": {
-    "overrides": {
-      "diff": "^4.0.4"
-    }
-  },
   "files": [
     "lib/index.d.ts",
+    "lib/index.d.ts.map",
     "lib/index.js",
     "lib/index.js.map"
   ]

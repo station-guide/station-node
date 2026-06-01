@@ -24,6 +24,20 @@ Station.setDebug(true);
 await Station.trackCount('page_view');
 await Station.trackCount('signup', 3);
 await Station.trackValue('checkout_total', 24.95);
+
+Station.captureCount('background_job_started');
+Station.captureValue('api_latency_ms', 142);
+```
+
+Named imports are also available:
+
+```ts
+import { setApiKey, trackCount, trackValue } from 'station-node';
+
+setApiKey('your-api-key');
+
+await trackCount('page_view');
+await trackValue('api_latency_ms', 142);
 ```
 
 Instead of calling `setApiKey`, you can set the `STATION_API_KEY` environment
@@ -60,5 +74,30 @@ views, clicks, signups, or other discrete events.
 Sends a numeric value event to Station. Use it for measurements such as totals,
 durations, scores, or other numeric observations.
 
+### `captureCount(statName, value = 1)`
+
+Fire-and-forget version of `trackCount`. It schedules the request and returns
+immediately.
+
+### `captureValue(statName, value)`
+
+Fire-and-forget version of `trackValue`. It schedules the request and returns
+immediately.
+
 Network errors do not interrupt your application flow. Enable debug mode if you
 want failed event submissions to be logged during development or diagnostics.
+The client reuses keep-alive connections, applies a short request timeout,
+retries one transient network/server failure, and backs off after `429` rate
+limit responses.
+
+## Current Contract
+
+The package currently posts to:
+
+- `POST https://api.station.guide/v1/events/count`
+- `POST https://api.station.guide/v1/events/value`
+
+Request bodies use `apiKey`, `statName`, and `value`, which are accepted by the current Rust ingest service.
+
+The launch API uses `trackValue` for numeric measurements. Station displays
+those values as averages over time in the app.

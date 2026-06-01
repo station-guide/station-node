@@ -1,5 +1,18 @@
 # Change Log
 
+### Next
+
+### 1.2.0
+
+* Added a keep-alive HTTP client with a short request timeout;
+* Added `captureCount` and `captureValue` fire-and-forget helpers;
+* Added named exports and a public `StationClient` TypeScript interface;
+* Added an explicit package `exports` map and declaration maps;
+* Added one retry for transient network/server failures;
+* Added local backoff handling for `429` rate limit responses;
+* Removed public endpoint overrides; the package always sends to production Station;
+* Removed tracking options from the MVP API surface;
+
 ### 1.1.0
 
 * Added `setApiKey` for configuring the client once per process;
