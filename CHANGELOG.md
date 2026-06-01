@@ -2,6 +2,10 @@
 
 ### Next
 
+### 1.2.1
+
+* Fixed packaged license file to match MIT metadata.
+
 ### 1.2.0
 
 * Added a keep-alive HTTP client with a short request timeout;
