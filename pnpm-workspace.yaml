@@ -1,4 +1,5 @@
 allowBuilds:
+  '@parcel/watcher': true
   unrs-resolver: true
 overrides:
   diff: ^4.0.4
